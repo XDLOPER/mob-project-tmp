@@ -1,4 +1,5 @@
 import 'package:createmy_flutter_template/core/template/template_view/template_base_cstmview.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:mobx/mobx.dart';
@@ -39,6 +40,8 @@ class _TemplateViewState<T extends Store> extends State<TemplateView<T>> {
         ? TemplateBaseCustomView(
             onBuilder: (context) => widget.onBuilder(context, widget.instance),
           )
-        : widget.onBuilder(context, widget.instance);
+        : Scaffold(
+            body: widget.onBuilder(context, widget.instance),
+          );
   }
 }

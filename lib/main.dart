@@ -1,9 +1,22 @@
+import 'package:easy_localization/easy_localization.dart';
+import 'package:extensions/string_extensions/string_extensions.dart';
 import 'package:flutter/material.dart';
 
-import 'core/template/template_view/template_base_view.dart';
+import 'core/init/language_management/language_management.dart';
+import 'core/constants/app_constants.dart';
+import 'core/init/language_management/locale_keys.g.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+
+  runApp(
+    EasyLocalization(
+      supportedLocales: LanguageManagement.instance.supportedLocale,
+      path: AppConstans.LANG_ASSET_PATH,
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -11,10 +24,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    late final _model;
-
+    print(context.deviceLocale);
     return MaterialApp(
-      home: Text('hello'),
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
+      home: Scaffold(
+        body: Center(child: Text(LocaleKeys.welcome.locale)),
+      ),
     );
   }
 }

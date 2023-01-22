@@ -10,10 +10,13 @@ environment:
 
 dependencies:
   #package library
-  extensions:
-    path: modules/extensions/
+  core_component:
+    path: ./modules/core_component
+  extensions: 
+    path: ./modules/extensions
+  
 
-  #utility
+  #flutter utility
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
@@ -28,8 +31,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   mobx_codegen: ^2.1.1
-  build_runner:
-
+  build_runner: 
   flutter_lints: ^2.0.0
 
 

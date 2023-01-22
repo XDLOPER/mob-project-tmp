@@ -6,7 +6,8 @@ class LanguageManagement {
   LanguageManagement._init();
 
   final trLocale = const Locale('tr', 'TR');
+  final enLocale = const Locale('en', 'EN');
 
-  List<Locale> get supportedLocale => [trLocale];
-  static get instance => _instance ?? LanguageManagement._init();
+  List<Locale> get supportedLocale => [trLocale, enLocale];
+  static get instance => _instance ?? (_instance = LanguageManagement._init());
 }

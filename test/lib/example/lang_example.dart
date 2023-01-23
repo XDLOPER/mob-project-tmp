@@ -20,9 +20,7 @@ class _LangState extends State<Lang> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      
       appBar: AppBar(
-        
         toolbarHeight: 100,
         backgroundColor: Colors.transparent,
         elevation: 0,

@@ -15,6 +15,7 @@ class ThemeManagement<L, D extends TemplateInterfaces> extends ChangeNotifier {
   // theme change function
   void themeChanges() {
     _statusTheme = !_statusTheme;
+
     print('statusThemeCode ${instance.themeName}');
     notifyListeners();
   }

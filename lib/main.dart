@@ -4,10 +4,9 @@ import 'package:easy_localization/easy_localization.dart';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:provider/single_child_widget.dart';
 
 import 'core/constants/app/app_constants.dart';
-import 'package:test/example/lang_example.dart';
+
 
 import 'core/init/notifier_management/providers_management/providers_management.dart';
 
@@ -41,14 +40,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [/* ...ProvidersManagement.instance.singleItems, ...ProvidersManagement.instance.dependItems,*/ ...ProvidersManagement.instance.uiChangesItems],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        localizationsDelegates: context.localizationDelegates,
-        supportedLocales: context.supportedLocales,
-        locale: context.locale,
-        theme: /* burda kalındı*/,
-        home: const Application(),
-      ),
+      child: const Application(),
     );
   }
 }
@@ -58,7 +50,14 @@ class Application extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const _AppBody();
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
+      theme: context.watch<ThemeManagement>().currentTheme,
+      home: const _AppBody(),
+    );
   }
 }
 
@@ -74,7 +73,7 @@ class _AppBody extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
-            child: Text(ThemeManagement.instance.themeName.toString()),
+            child: Text(context.watch<ThemeManagement>().themeName.toString()),
           ),
           FloatingActionButton(
             onPressed: () => ThemeManagement.instance.themeChanges(),

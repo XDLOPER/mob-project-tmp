@@ -12,6 +12,7 @@ dependencies:
     sdk: flutter
   createmy_flutter_template:
     path: ../../
+  easy_localization: ^3.0.1
 
 
 dev_dependencies:

@@ -1,4 +1,4 @@
-name: extensions
+name: test
 description: A new Flutter package project.
 version: 0.0.1
 publish_to: none
@@ -11,8 +11,9 @@ dependencies:
   flutter:
     sdk: flutter
   createmy_flutter_template:
-    path: ../../
-
+    path: ../
+  extensions:
+    path: ../modules/extensions/
 
 dev_dependencies:
   flutter_test:

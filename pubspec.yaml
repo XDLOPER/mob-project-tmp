@@ -14,26 +14,30 @@ dependencies:
     path: ./modules/core_component
   extensions: 
     path: ./modules/extensions
-  
+  test:
+    path: ./test
 
-  #flutter utility
-  flutter:
-    sdk: flutter
+  #nominal depends
   cupertino_icons: ^1.0.2
   easy_localization: ^3.0.1
+  flutter_phoenix: ^1.1.0
+
 
   # state plugins  
   mobx: ^2.1.3
   flutter_mobx: ^2.0.6+5
-  
+
+  #flutter depends
+  flutter:
+    sdk: flutter  
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   mobx_codegen: ^2.1.1
-  build_runner: 
   flutter_lints: ^2.0.0
-
+  build_runner: 
+  
 
 flutter:
   uses-material-design: true

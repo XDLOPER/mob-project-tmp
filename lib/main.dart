@@ -4,9 +4,9 @@ import 'package:easy_localization/easy_localization.dart';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:test/example/theme_example.dart';
 
 import 'core/constants/app/app_constants.dart';
-
 
 import 'core/init/notifier_management/providers_management/providers_management.dart';
 
@@ -69,18 +69,7 @@ class _AppBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(
-            child: Text(context.watch<ThemeManagement>().themeName.toString()),
-          ),
-          FloatingActionButton(
-            onPressed: () => ThemeManagement.instance.themeChanges(),
-            child: Text('bas'),
-          )
-        ],
-      ),
+      body: ThemeExample(context: context),
     );
   }
 }

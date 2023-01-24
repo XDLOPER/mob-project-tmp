@@ -11,6 +11,7 @@ import 'package:provider/provider.dart';
 
 import 'package:test/example/theme_example.dart';
 import 'package:test/example/lang_example.dart';
+import 'package:test/example/template/template-view.dart';
 
 Future<void> _init() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -72,8 +73,6 @@ class _AppBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ThemeExample(context: context),
-    );
+    return const TemplateViewExample();
   }
 }

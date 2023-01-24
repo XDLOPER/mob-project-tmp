@@ -6,13 +6,13 @@ import 'package:mobx/mobx.dart';
 
 class TemplateView<T extends Store> extends StatefulWidget {
   // get request on the class
-  const TemplateView({super.key, required this.instance, required this.onBuilder, required this.onReady, this.onDispose, required this.isCustomTemplate});
+  const TemplateView({super.key, required this.instance, required this.onBuilder, this.onReady, this.onDispose, required this.isCustomTemplate});
 
   // return class functions
   final bool isCustomTemplate;
   final Widget Function(BuildContext context, T model) onBuilder;
   final T instance;
-  final void Function(T viewModel) onReady;
+  final void Function(T viewModel)? onReady;
   final VoidCallback? onDispose;
 
   @override
@@ -24,7 +24,7 @@ class _TemplateViewState<T extends Store> extends State<TemplateView<T>> {
   @override
   void initState() {
     viewModel = widget.instance;
-    widget.onReady(viewModel);
+    widget.onReady!(viewModel);
     super.initState();
   }
 

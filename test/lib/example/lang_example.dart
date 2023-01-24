@@ -6,15 +6,15 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:extensions/string_extensions/string_extensions.dart';
 import 'package:createmy_flutter_template/core/init/language_management/locale_keys.g.dart';
 
-class Lang extends StatefulWidget {
+class LangExample extends StatefulWidget {
   late BuildContext context;
-  Lang({super.key, required this.context});
+  LangExample({super.key, required this.context});
 
   @override
-  State<Lang> createState() => _LangState();
+  State<LangExample> createState() => _LangExampleState();
 }
 
-class _LangState extends State<Lang> {
+class _LangExampleState extends State<LangExample> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

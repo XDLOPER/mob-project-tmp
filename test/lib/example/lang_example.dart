@@ -7,9 +7,8 @@ import 'package:extensions/string_extensions/string_extensions.dart';
 import 'package:createmy_flutter_template/core/init/language_management/locale_keys.g.dart';
 
 class Lang extends StatefulWidget {
-  late Locale locale;
   late BuildContext context;
-  Lang({super.key, required this.locale, required this.context});
+  Lang({super.key, required this.context});
 
   @override
   State<Lang> createState() => _LangState();

@@ -1,3 +1,5 @@
+import 'package:createmy_flutter_template/core/init/navigation_management/navigation.dart';
+import 'package:createmy_flutter_template/core/init/navigation_management/navigation_service.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
@@ -9,7 +11,7 @@ class ProvidersManagement {
   ProvidersManagement._init();
 
   List<SingleChildWidget> singleItems = [];
-  List<SingleChildWidget> dependItems = [];
+  List<SingleChildWidget> dependItems = [Provider.value(value: Navigation.instance)];
   List<SingleChildWidget> uiChangesItems = [
     ChangeNotifierProvider.value(
       value: ThemeManagement.instance,
